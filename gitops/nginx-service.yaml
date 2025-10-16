@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-nodeport-service
+  name: nginx-service
   labels:
     app: nginx
 spec:
@@ -11,6 +11,5 @@ spec:
   ports:
     - port: 80          # Port exposed within the cluster
       targetPort: 8080  # Port on the container
-      nodePort: 30080   # Port exposed on each node (30000-32767)
       protocol: TCP
       name: http
